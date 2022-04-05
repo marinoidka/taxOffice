@@ -42,7 +42,12 @@ public class StatService {
 
     public double fifteenPercentTax() {
         int budget = startIncome - startExpense;
-        double tax15 = budget * 0.15;
+        double tax15;
+        if (budget > 0) {
+            tax15 = budget * 0.15;
+        } else {
+            tax15 = 0;
+        }
         return tax15;
     }
 
